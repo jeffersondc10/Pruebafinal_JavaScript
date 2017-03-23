@@ -27,7 +27,8 @@ igual = document.getElementById("igual")
 //window.onmousedown = tamañoTeclaDown;
 //window.onmouseup = tamañoTeclaUp;
 
-
+var numDisplay = [ ]
+var pantalla = []
 
 var Calculadora = {
   //inicializar funciones
@@ -38,10 +39,20 @@ var Calculadora = {
 
   presionarTecla: function(){
     display = document.getElementById('display')
+
     uno.onmousedown = function(e){
-      e.preventDefault()
+      //e.preventDefault()
       uno.style.transform = "scale(0.9, 0.9)"
-      display.innerHTML = "1"
+      if (display.innerHTML == "0"){
+        display.innerHTML = "1"
+        numDisplay.push(display.innerHTML = "1")
+       pantalla = numDisplay.join("")
+        display.innerHTML = pantalla
+      }else{
+        numDisplay.push(display.innerHTML = "1")
+       pantalla = numDisplay.join("")
+        display.innerHTML = pantalla
+      }
     }
     uno.onmouseup = function(e){
       e.preventDefault()
@@ -50,7 +61,16 @@ var Calculadora = {
     dos.onmousedown = function(e){
       e.preventDefault()
       dos.style.transform = "scale(0.9, 0.9)"
-      display.innerHTML = "2"
+      if (display.innerHTML == "0"){
+        display.innerHTML = "2"
+        numDisplay.push(display.innerHTML = "2")
+       pantalla = numDisplay.join("")
+        display.innerHTML = pantalla
+      }else{
+        numDisplay.push(display.innerHTML = "2")
+       pantalla = numDisplay.join("")
+        display.innerHTML = pantalla
+      }
     }
     dos.onmouseup = function(e){
       e.preventDefault()
@@ -59,6 +79,16 @@ var Calculadora = {
     tres.onmousedown = function(e){
       e.preventDefault()
       tres.style.transform = "scale(0.9, 0.9)"
+      if (display.innerHTML == "0"){
+        display.innerHTML = "3"
+        numDisplay.push(display.innerHTML = "3")
+       pantalla = numDisplay.join("")
+        display.innerHTML = pantalla
+      }else{
+        numDisplay.push(display.innerHTML = "3")
+       pantalla = numDisplay.join("")
+        display.innerHTML = pantalla
+      }
     }
     tres.onmouseup = function(e){
       e.preventDefault()
@@ -67,6 +97,16 @@ var Calculadora = {
     cuatro.onmousedown = function(e){
       e.preventDefault()
       cuatro.style.transform = "scale(0.9, 0.9)"
+      if (display.innerHTML == "0"){
+        display.innerHTML = "4"
+        numDisplay.push(display.innerHTML = "4")
+       pantalla = numDisplay.join("")
+        display.innerHTML = pantalla
+      }else{
+        numDisplay.push(display.innerHTML = "4")
+       pantalla = numDisplay.join("")
+        display.innerHTML = pantalla
+      }
     }
     cuatro.onmouseup = function(e){
       e.preventDefault()
@@ -75,6 +115,16 @@ var Calculadora = {
     cinco.onmousedown = function(e){
       e.preventDefault()
       cinco.style.transform = "scale(0.9, 0.9)"
+      if (display.innerHTML == "0"){
+        display.innerHTML = "5"
+        numDisplay.push(display.innerHTML = "5")
+       pantalla = numDisplay.join("")
+        display.innerHTML = pantalla
+      }else{
+        numDisplay.push(display.innerHTML = "5")
+       pantalla = numDisplay.join("")
+        display.innerHTML = pantalla
+      }
     }
     cinco.onmouseup = function(e){
       e.preventDefault()
@@ -83,6 +133,16 @@ var Calculadora = {
     seis.onmousedown = function(e){
       e.preventDefault()
       seis.style.transform = "scale(0.9, 0.9)"
+      if (display.innerHTML == "0"){
+        display.innerHTML = "6"
+        numDisplay.push(display.innerHTML = "6")
+       pantalla = numDisplay.join("")
+        display.innerHTML = pantalla
+      }else{
+        numDisplay.push(display.innerHTML = "6")
+       pantalla = numDisplay.join("")
+        display.innerHTML = pantalla
+      }
     }
     seis.onmouseup = function(e){
       e.preventDefault()
@@ -91,6 +151,16 @@ var Calculadora = {
     siete.onmousedown = function(e){
       e.preventDefault()
       siete.style.transform = "scale(0.9, 0.9)"
+      if (display.innerHTML == "0"){
+        display.innerHTML = "7"
+        numDisplay.push(display.innerHTML = "7")
+       pantalla = numDisplay.join("")
+        display.innerHTML = pantalla
+      }else{
+        numDisplay.push(display.innerHTML = "7")
+       pantalla = numDisplay.join("")
+        display.innerHTML = pantalla
+      }
     }
     siete.onmouseup = function(e){
       e.preventDefault()
@@ -99,6 +169,16 @@ var Calculadora = {
     ocho.onmousedown = function(e){
       e.preventDefault()
       ocho.style.transform = "scale(0.9, 0.9)"
+      if (display.innerHTML == "0"){
+        display.innerHTML = "8"
+        numDisplay.push(display.innerHTML = "8")
+       pantalla = numDisplay.join("")
+        display.innerHTML = pantalla
+      }else{
+        numDisplay.push(display.innerHTML = "8")
+       pantalla = numDisplay.join("")
+        display.innerHTML = pantalla
+      }
     }
     ocho.onmouseup = function(e){
       e.preventDefault()
@@ -107,6 +187,16 @@ var Calculadora = {
     nueve.onmousedown = function(e){
       e.preventDefault()
       nueve.style.transform = "scale(0.9, 0.9)"
+      if (display.innerHTML == "0"){
+        display.innerHTML = "9"
+        numDisplay.push(display.innerHTML = "9")
+       pantalla = numDisplay.join("")
+        display.innerHTML = pantalla
+      }else{
+        numDisplay.push(display.innerHTML = "9")
+       pantalla = numDisplay.join("")
+        display.innerHTML = pantalla
+      }
     }
     nueve.onmouseup = function(e){
       e.preventDefault()
@@ -115,6 +205,16 @@ var Calculadora = {
     cero.onmousedown = function(e){
       e.preventDefault()
       cero.style.transform = "scale(0.9, 0.9)"
+      if (display.innerHTML == "0"){
+        display.innerHTML = "0"
+        numDisplay.push(display.innerHTML = "0")
+       pantalla = numDisplay.join("")
+        display.innerHTML = pantalla
+      }else{
+        numDisplay.push(display.innerHTML = "0")
+       pantalla = numDisplay.join("")
+        display.innerHTML = pantalla
+      }
     }
     cero.onmouseup = function(e){
       e.preventDefault()
@@ -123,6 +223,9 @@ var Calculadora = {
     on.onmousedown = function(e){
       e.preventDefault()
       on.style.transform = "scale(0.9, 0.9)"
+      pantalla.length = 0
+      display.innerHTML = pantalla
+
     }
     on.onmouseup = function(e){
       e.preventDefault()
