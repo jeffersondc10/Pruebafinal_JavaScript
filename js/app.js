@@ -22,11 +22,8 @@ por = document.getElementById("por")
 dividido = document.getElementById("dividido")
 punto = document.getElementById("punto")
 igual = document.getElementById("igual")
-
-
-//window.onmousedown = tamañoTeclaDown;
-//window.onmouseup = tamañoTeclaUp;
-
+var resultado = 0
+var operacion = 0
 var numDisplay = [ ]
 var pantalla = []
 
@@ -36,23 +33,15 @@ var Calculadora = {
     this.presionarTecla()
   },
 
-
   presionarTecla: function(){
     display = document.getElementById('display')
+    var self = this
 
     uno.onmousedown = function(e){
-      //e.preventDefault()
       uno.style.transform = "scale(0.9, 0.9)"
-      if (display.innerHTML == "0"){
-        display.innerHTML = "1"
-        numDisplay.push(display.innerHTML = "1")
-       pantalla = numDisplay.join("")
-        display.innerHTML = pantalla
-      }else{
-        numDisplay.push(display.innerHTML = "1")
-       pantalla = numDisplay.join("")
-        display.innerHTML = pantalla
-      }
+      numDisplay.push(display.innerHTML = "1")
+      pantalla = numDisplay.join("")
+      display.innerHTML = pantalla
     }
     uno.onmouseup = function(e){
       e.preventDefault()
@@ -61,16 +50,9 @@ var Calculadora = {
     dos.onmousedown = function(e){
       e.preventDefault()
       dos.style.transform = "scale(0.9, 0.9)"
-      if (display.innerHTML == "0"){
-        display.innerHTML = "2"
-        numDisplay.push(display.innerHTML = "2")
-       pantalla = numDisplay.join("")
-        display.innerHTML = pantalla
-      }else{
-        numDisplay.push(display.innerHTML = "2")
-       pantalla = numDisplay.join("")
-        display.innerHTML = pantalla
-      }
+      numDisplay.push(display.innerHTML = "2")
+      pantalla = numDisplay.join("")
+      display.innerHTML = pantalla
     }
     dos.onmouseup = function(e){
       e.preventDefault()
@@ -79,16 +61,9 @@ var Calculadora = {
     tres.onmousedown = function(e){
       e.preventDefault()
       tres.style.transform = "scale(0.9, 0.9)"
-      if (display.innerHTML == "0"){
-        display.innerHTML = "3"
-        numDisplay.push(display.innerHTML = "3")
-       pantalla = numDisplay.join("")
-        display.innerHTML = pantalla
-      }else{
-        numDisplay.push(display.innerHTML = "3")
-       pantalla = numDisplay.join("")
-        display.innerHTML = pantalla
-      }
+      numDisplay.push(display.innerHTML = "3")
+      pantalla = numDisplay.join("")
+      display.innerHTML = pantalla
     }
     tres.onmouseup = function(e){
       e.preventDefault()
@@ -97,16 +72,10 @@ var Calculadora = {
     cuatro.onmousedown = function(e){
       e.preventDefault()
       cuatro.style.transform = "scale(0.9, 0.9)"
-      if (display.innerHTML == "0"){
-        display.innerHTML = "4"
         numDisplay.push(display.innerHTML = "4")
-       pantalla = numDisplay.join("")
+        pantalla = numDisplay.join("")
+       //pantalla = numDisplay.join("")
         display.innerHTML = pantalla
-      }else{
-        numDisplay.push(display.innerHTML = "4")
-       pantalla = numDisplay.join("")
-        display.innerHTML = pantalla
-      }
     }
     cuatro.onmouseup = function(e){
       e.preventDefault()
@@ -115,16 +84,9 @@ var Calculadora = {
     cinco.onmousedown = function(e){
       e.preventDefault()
       cinco.style.transform = "scale(0.9, 0.9)"
-      if (display.innerHTML == "0"){
-        display.innerHTML = "5"
         numDisplay.push(display.innerHTML = "5")
        pantalla = numDisplay.join("")
         display.innerHTML = pantalla
-      }else{
-        numDisplay.push(display.innerHTML = "5")
-       pantalla = numDisplay.join("")
-        display.innerHTML = pantalla
-      }
     }
     cinco.onmouseup = function(e){
       e.preventDefault()
@@ -133,16 +95,9 @@ var Calculadora = {
     seis.onmousedown = function(e){
       e.preventDefault()
       seis.style.transform = "scale(0.9, 0.9)"
-      if (display.innerHTML == "0"){
-        display.innerHTML = "6"
         numDisplay.push(display.innerHTML = "6")
        pantalla = numDisplay.join("")
         display.innerHTML = pantalla
-      }else{
-        numDisplay.push(display.innerHTML = "6")
-       pantalla = numDisplay.join("")
-        display.innerHTML = pantalla
-      }
     }
     seis.onmouseup = function(e){
       e.preventDefault()
@@ -151,16 +106,9 @@ var Calculadora = {
     siete.onmousedown = function(e){
       e.preventDefault()
       siete.style.transform = "scale(0.9, 0.9)"
-      if (display.innerHTML == "0"){
-        display.innerHTML = "7"
         numDisplay.push(display.innerHTML = "7")
        pantalla = numDisplay.join("")
         display.innerHTML = pantalla
-      }else{
-        numDisplay.push(display.innerHTML = "7")
-       pantalla = numDisplay.join("")
-        display.innerHTML = pantalla
-      }
     }
     siete.onmouseup = function(e){
       e.preventDefault()
@@ -169,16 +117,9 @@ var Calculadora = {
     ocho.onmousedown = function(e){
       e.preventDefault()
       ocho.style.transform = "scale(0.9, 0.9)"
-      if (display.innerHTML == "0"){
-        display.innerHTML = "8"
-        numDisplay.push(display.innerHTML = "8")
-       pantalla = numDisplay.join("")
-        display.innerHTML = pantalla
-      }else{
-        numDisplay.push(display.innerHTML = "8")
-       pantalla = numDisplay.join("")
-        display.innerHTML = pantalla
-      }
+      numDisplay.push(display.innerHTML = "8")
+      pantalla = numDisplay.join("")
+      display.innerHTML = pantalla
     }
     ocho.onmouseup = function(e){
       e.preventDefault()
@@ -187,16 +128,9 @@ var Calculadora = {
     nueve.onmousedown = function(e){
       e.preventDefault()
       nueve.style.transform = "scale(0.9, 0.9)"
-      if (display.innerHTML == "0"){
-        display.innerHTML = "9"
         numDisplay.push(display.innerHTML = "9")
        pantalla = numDisplay.join("")
         display.innerHTML = pantalla
-      }else{
-        numDisplay.push(display.innerHTML = "9")
-       pantalla = numDisplay.join("")
-        display.innerHTML = pantalla
-      }
     }
     nueve.onmouseup = function(e){
       e.preventDefault()
@@ -206,10 +140,7 @@ var Calculadora = {
       e.preventDefault()
       cero.style.transform = "scale(0.9, 0.9)"
       if (display.innerHTML == "0"){
-        display.innerHTML = "0"
-        numDisplay.push(display.innerHTML = "0")
-       pantalla = numDisplay.join("")
-        display.innerHTML = pantalla
+
       }else{
         numDisplay.push(display.innerHTML = "0")
        pantalla = numDisplay.join("")
@@ -223,9 +154,11 @@ var Calculadora = {
     on.onmousedown = function(e){
       e.preventDefault()
       on.style.transform = "scale(0.9, 0.9)"
-      pantalla.length = 0
-      display.innerHTML = pantalla
-
+      pantalla = 0
+      numDisplay = []
+      //operando = []
+      resultado = 0
+      display.innerHTML = "0"
     }
     on.onmouseup = function(e){
       e.preventDefault()
@@ -241,15 +174,24 @@ var Calculadora = {
     }
     suma.onmousedown = function(e){
       e.preventDefault()
-      suma.style.transform = "scale(0.9, 0.9)"
+      suma.style.transform = "scale(0.9, 0.9)",
+        operando = 0
+        numDisplay = []
+        operando = pantalla
+        operador = 1
     }
     suma.onmouseup = function(e){
       e.preventDefault()
       suma.style.transform = "scale(1, 1)"
+
     }
     resta.onmousedown = function(e){
       e.preventDefault()
       resta.style.transform = "scale(0.9, 0.9)"
+      operando = 0
+      numDisplay = []
+      operando = pantalla
+      operador = 2
     }
     resta.onmouseup = function(e){
       e.preventDefault()
@@ -258,6 +200,10 @@ var Calculadora = {
     por.onmousedown = function(e){
       e.preventDefault()
       por.style.transform = "scale(0.9, 0.9)"
+      operador = 3
+      operando = 0
+      numDisplay = []
+      operando = pantalla
     }
     por.onmouseup = function(e){
       e.preventDefault()
@@ -266,6 +212,10 @@ var Calculadora = {
     dividido.onmousedown = function(e){
       e.preventDefault()
       dividido.style.transform = "scale(0.9, 0.9)"
+      operador = 4
+      operando = 0
+      numDisplay = []
+      operando = pantalla
     }
     dividido.onmouseup = function(e){
       e.preventDefault()
@@ -274,6 +224,54 @@ var Calculadora = {
     igual.onmousedown = function(e){
       e.preventDefault()
       igual.style.transform = "scale(0.9, 0.9)"
+      //operando = 0
+      if (operador == 1){
+        a = parseFloat(operando)
+        b = parseFloat(pantalla)
+        //resultado = 0
+        resultado =  a + b + parseFloat(resultado)
+        a = 0
+        b = 0
+        pantalla = 0
+        display.innerHTML = resultado
+      }else if (operador  == 2) {
+        a = parseFloat(operando)
+        b = parseFloat(pantalla)
+        //resultado = 0
+        if (resultado == 0){
+          resultado = a - b
+        }else{
+          resultado =  resultado - b
+        }
+        a = 0
+        b = 0
+        pantalla = 0
+        display.innerHTML = resultado
+      }else if (operador == 3){
+        a = parseFloat(operando)
+        b = parseFloat(pantalla)
+        if (resultado == 0){
+          resultado =  a * b
+        }else{
+          resultado =  b * parseFloat(resultado)
+      }
+        a = 0
+        b = 0
+        pantalla = 0
+        display.innerHTML = resultado
+      } else{
+        a = parseFloat(operando)
+        b = parseFloat(pantalla)
+        if (resultado == 0){
+          resultado =  a / b
+        }else {
+          resultado = b / resultado
+        }
+        a = 0
+        b = 0
+        pantalla = 0
+        display.innerHTML = resultado
+      }
     }
     igual.onmouseup = function(e){
       e.preventDefault()
@@ -290,13 +288,21 @@ var Calculadora = {
     punto.onmousedown = function(e){
       e.preventDefault()
       punto.style.transform = "scale(0.9, 0.9)"
+      if (pantalla.length == 1){
+        numDisplay.push(display.innerHTML = ".")
+
+        display.innerHTML = pantalla
+      }
+      if (display.innerHTML == "0"){
+        numDisplay.push(display.innerHTML = "0.")
+        pantalla = numDisplay.join("")
+        display.innerHTML = pantalla
+      }
     }
     punto.onmouseup = function(e){
       e.preventDefault()
       punto.style.transform = "scale(1, 1)"
     }
-
   }
-
 }
 Calculadora.init()
