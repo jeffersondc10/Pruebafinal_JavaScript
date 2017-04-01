@@ -26,6 +26,10 @@ var resultado = 0
 var operacion = 0
 var numDisplay = [ ]
 var pantalla = []
+var contador = 0
+var contadorSigno = 0
+
+
 
 var Calculadora = {
   //inicializar funciones
@@ -39,9 +43,13 @@ var Calculadora = {
 
     uno.onmousedown = function(e){
       uno.style.transform = "scale(0.9, 0.9)"
-      numDisplay.push(display.innerHTML = "1")
-      pantalla = numDisplay.join("")
-      display.innerHTML = pantalla
+      if (pantalla.length >= 8){
+      }else{
+        numDisplay.push(display.innerHTML = "1")
+        pantalla = numDisplay.join("")
+        display.innerHTML = pantalla
+      }
+
     }
     uno.onmouseup = function(e){
       e.preventDefault()
@@ -50,9 +58,12 @@ var Calculadora = {
     dos.onmousedown = function(e){
       e.preventDefault()
       dos.style.transform = "scale(0.9, 0.9)"
-      numDisplay.push(display.innerHTML = "2")
-      pantalla = numDisplay.join("")
-      display.innerHTML = pantalla
+      if (pantalla.length >= 8){
+      }else{
+        numDisplay.push(display.innerHTML = "2")
+        pantalla = numDisplay.join("")
+        display.innerHTML = pantalla
+      }
     }
     dos.onmouseup = function(e){
       e.preventDefault()
@@ -61,9 +72,13 @@ var Calculadora = {
     tres.onmousedown = function(e){
       e.preventDefault()
       tres.style.transform = "scale(0.9, 0.9)"
-      numDisplay.push(display.innerHTML = "3")
-      pantalla = numDisplay.join("")
-      display.innerHTML = pantalla
+      if (pantalla.length > 7){
+
+      }else{
+        numDisplay.push(display.innerHTML = "3")
+        pantalla = numDisplay.join("")
+        display.innerHTML = pantalla
+      }
     }
     tres.onmouseup = function(e){
       e.preventDefault()
@@ -72,10 +87,12 @@ var Calculadora = {
     cuatro.onmousedown = function(e){
       e.preventDefault()
       cuatro.style.transform = "scale(0.9, 0.9)"
+      if (pantalla.length >= 8){
+      }else{
         numDisplay.push(display.innerHTML = "4")
         pantalla = numDisplay.join("")
-       //pantalla = numDisplay.join("")
         display.innerHTML = pantalla
+      }
     }
     cuatro.onmouseup = function(e){
       e.preventDefault()
@@ -84,9 +101,12 @@ var Calculadora = {
     cinco.onmousedown = function(e){
       e.preventDefault()
       cinco.style.transform = "scale(0.9, 0.9)"
+      if (pantalla.length >= 8){
+      }else{
         numDisplay.push(display.innerHTML = "5")
-       pantalla = numDisplay.join("")
+        pantalla = numDisplay.join("")
         display.innerHTML = pantalla
+      }
     }
     cinco.onmouseup = function(e){
       e.preventDefault()
@@ -95,9 +115,12 @@ var Calculadora = {
     seis.onmousedown = function(e){
       e.preventDefault()
       seis.style.transform = "scale(0.9, 0.9)"
+      if (pantalla.length >= 8){
+      }else{
         numDisplay.push(display.innerHTML = "6")
-       pantalla = numDisplay.join("")
+        pantalla = numDisplay.join("")
         display.innerHTML = pantalla
+      }
     }
     seis.onmouseup = function(e){
       e.preventDefault()
@@ -106,9 +129,12 @@ var Calculadora = {
     siete.onmousedown = function(e){
       e.preventDefault()
       siete.style.transform = "scale(0.9, 0.9)"
+      if (pantalla.length >= 8){
+      }else{
         numDisplay.push(display.innerHTML = "7")
-       pantalla = numDisplay.join("")
+        pantalla = numDisplay.join("")
         display.innerHTML = pantalla
+      }
     }
     siete.onmouseup = function(e){
       e.preventDefault()
@@ -117,9 +143,12 @@ var Calculadora = {
     ocho.onmousedown = function(e){
       e.preventDefault()
       ocho.style.transform = "scale(0.9, 0.9)"
-      numDisplay.push(display.innerHTML = "8")
-      pantalla = numDisplay.join("")
-      display.innerHTML = pantalla
+      if (pantalla.length >= 8){
+      }else{
+        numDisplay.push(display.innerHTML = "8")
+        pantalla = numDisplay.join("")
+        display.innerHTML = pantalla
+      }
     }
     ocho.onmouseup = function(e){
       e.preventDefault()
@@ -128,9 +157,12 @@ var Calculadora = {
     nueve.onmousedown = function(e){
       e.preventDefault()
       nueve.style.transform = "scale(0.9, 0.9)"
+      if (pantalla.length >= 8){
+      }else{
         numDisplay.push(display.innerHTML = "9")
-       pantalla = numDisplay.join("")
+        pantalla = numDisplay.join("")
         display.innerHTML = pantalla
+      }
     }
     nueve.onmouseup = function(e){
       e.preventDefault()
@@ -142,9 +174,12 @@ var Calculadora = {
       if (display.innerHTML == "0"){
 
       }else{
-        numDisplay.push(display.innerHTML = "0")
-       pantalla = numDisplay.join("")
-        display.innerHTML = pantalla
+        if (pantalla.length >= 8){
+        }else{
+          numDisplay.push(display.innerHTML = "0")
+          pantalla = numDisplay.join("")
+          display.innerHTML = pantalla
+        }
       }
     }
     cero.onmouseup = function(e){
@@ -156,8 +191,9 @@ var Calculadora = {
       on.style.transform = "scale(0.9, 0.9)"
       pantalla = 0
       numDisplay = []
-      //operando = []
+      contador = 0
       resultado = 0
+      contadorSigno = 0
       display.innerHTML = "0"
     }
     on.onmouseup = function(e){
@@ -167,18 +203,37 @@ var Calculadora = {
     sign.onmousedown = function(e){
       e.preventDefault()
       sign.style.transform = "scale(0.9, 0.9)"
+      if (display.innerHTML == "0"){
+
+      }else{
+        contadorSigno = contadorSigno + 1
+        if (contadorSigno % 2 == 0 ) {
+          pantalla = pantalla.substring(1)
+          display.innerHTML = pantalla
+          numDisplay.shift()
+        }else{
+          numDisplay.unshift(display.innerHTML = "-")
+         pantalla = numDisplay.join("")
+         //signo = pantalla
+          display.innerHTML = pantalla
+        }
+      }
     }
     sign.onmouseup = function(e){
       e.preventDefault()
       sign.style.transform = "scale(1, 1)"
+
     }
     suma.onmousedown = function(e){
       e.preventDefault()
-      suma.style.transform = "scale(0.9, 0.9)",
-        operando = 0
-        numDisplay = []
-        operando = pantalla
-        operador = 1
+      suma.style.transform = "scale(0.9, 0.9)"
+
+      operando = 0
+      numDisplay = []
+      operando = pantalla
+      operador = 1
+      pantalla = []
+      display.innerHTML = []
     }
     suma.onmouseup = function(e){
       e.preventDefault()
@@ -188,10 +243,13 @@ var Calculadora = {
     resta.onmousedown = function(e){
       e.preventDefault()
       resta.style.transform = "scale(0.9, 0.9)"
+
       operando = 0
       numDisplay = []
       operando = pantalla
       operador = 2
+      pantalla = []
+      display.innerHTML = []
     }
     resta.onmouseup = function(e){
       e.preventDefault()
@@ -200,10 +258,13 @@ var Calculadora = {
     por.onmousedown = function(e){
       e.preventDefault()
       por.style.transform = "scale(0.9, 0.9)"
+
       operador = 3
       operando = 0
       numDisplay = []
       operando = pantalla
+      display.innerHTML = []
+      pantalla = []
     }
     por.onmouseup = function(e){
       e.preventDefault()
@@ -212,10 +273,12 @@ var Calculadora = {
     dividido.onmousedown = function(e){
       e.preventDefault()
       dividido.style.transform = "scale(0.9, 0.9)"
+
       operador = 4
       operando = 0
       numDisplay = []
       operando = pantalla
+      display.innerHTML = []
     }
     dividido.onmouseup = function(e){
       e.preventDefault()
@@ -224,53 +287,67 @@ var Calculadora = {
     igual.onmousedown = function(e){
       e.preventDefault()
       igual.style.transform = "scale(0.9, 0.9)"
-      //operando = 0
+
       if (operador == 1){
         a = parseFloat(operando)
         b = parseFloat(pantalla)
-        //resultado = 0
-        resultado =  a + b + parseFloat(resultado)
+        Calculadora.operSumar(a, b, resultado)
         a = 0
         b = 0
         pantalla = 0
+        resultado = resultado.toString()
+        resultado = resultado.substring(0, 8)
         display.innerHTML = resultado
+        resultado = parseFloat(resultado)
+
+
       }else if (operador  == 2) {
         a = parseFloat(operando)
         b = parseFloat(pantalla)
         //resultado = 0
         if (resultado == 0){
-          resultado = a - b
+          self.operRestar(a, b)
         }else{
-          resultado =  resultado - b
+          self.operRestar(resultado, b)
         }
-        a = 0
-        b = 0
         pantalla = 0
-        display.innerHTML = resultado
+        operando = 0
+        resultado = resultado.toString()
+        resultado = resultado.split()
+        if (resultado.length >= 8){
+
+        }else{
+          display.innerHTML = resultado
+        }
       }else if (operador == 3){
         a = parseFloat(operando)
         b = parseFloat(pantalla)
         if (resultado == 0){
-          resultado =  a * b
+          self.operMultiplicar(a, b)
         }else{
-          resultado =  b * parseFloat(resultado)
+          self.operMultiplicar(resultado, b)
       }
-        a = 0
-        b = 0
+        operando = 0
         pantalla = 0
+        resultado = resultado.toString()
+        resultado = resultado.substring(0, 8)
         display.innerHTML = resultado
+        resultado = parseFloat(resultado)
+
       } else{
         a = parseFloat(operando)
         b = parseFloat(pantalla)
         if (resultado == 0){
-          resultado =  a / b
+          self.operDivision(a, b)
         }else {
-          resultado = b / resultado
+          self.operDivision(resultado, b)
         }
-        a = 0
-        b = 0
+        operando = 0
         pantalla = 0
+        resultado = resultado.toString()
+        resultado = resultado.substring(0, 8)
         display.innerHTML = resultado
+        resultado = parseFloat(resultado)
       }
     }
     igual.onmouseup = function(e){
@@ -288,13 +365,17 @@ var Calculadora = {
     punto.onmousedown = function(e){
       e.preventDefault()
       punto.style.transform = "scale(0.9, 0.9)"
-      if (pantalla.length == 1){
+      contador = contador + 1
+      if (contador == 1 && display.innerHTML !== "0" ){
         numDisplay.push(display.innerHTML = ".")
-
+        pantalla = numDisplay.join("")
         display.innerHTML = pantalla
-      }
-      if (display.innerHTML == "0"){
+      }else if (display.innerHTML == "0" && contador == 1 ){
         numDisplay.push(display.innerHTML = "0.")
+        pantalla = numDisplay.join("")
+        display.innerHTML = pantalla
+      }else if (display.innerHTML == "0" || contador > 1){
+        numDisplay.push(display.innerHTML = ".")
         pantalla = numDisplay.join("")
         display.innerHTML = pantalla
       }
@@ -303,6 +384,24 @@ var Calculadora = {
       e.preventDefault()
       punto.style.transform = "scale(1, 1)"
     }
+  },
+
+  operSumar: function(num1, num2, num3){
+    resultado = num1 + num2 + num3
+  },
+
+  operRestar: function(num1, num2){
+    resultado = num1 - num2
+  },
+
+  operMultiplicar: function(num1, num2){
+    resultado = num1 * num2
+  },
+
+  operDivision: function(num1, num2){
+    resultado = num1 / num2
   }
 }
+
+
 Calculadora.init()
